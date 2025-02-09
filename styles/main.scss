@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.header-bg {
+    background-image: url('../public/images/home-header.avif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.border-b-3 {
+    border-bottom-width: 3px;
+}

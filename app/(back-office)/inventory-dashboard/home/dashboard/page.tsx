@@ -1,7 +1,7 @@
 
 const Dashboard = () => {
     return (
-        <div>Dashboard</div>
+        <div style={{ height: '1000vh' }}>Dashboard</div>
     );
 };
 

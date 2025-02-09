@@ -1,0 +1,54 @@
+"use client";
+
+import { Building2 } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const HomeNavbar = () => {
+    const pathname = usePathname();
+
+    console.log(pathname);
+    
+
+    const navLinks = [
+        {
+            title: 'Dashboard',
+            href: '/inventory-dashboard/home/dashboard'
+        },
+        {
+            title: 'Getting Started',
+            href: '/inventory-dashboard/home/getting-started'
+        },
+        {
+            title: 'Recent Updates',
+            href: '/inventory-dashboard/home/updates'
+        },
+        {
+            title: 'Announcements',
+            href: '/inventory-dashboard/home/announcements'
+        }
+    ];
+
+    return (
+        <div className="sticky flex flex-col justify-between h-32 bg-green-300 px-5 pt-5 header-bg border-b border-slate-200" style={{ top: '-30px' }}>
+            <div className="flex space-x-3">
+                <div className="flex items-center justify-center w-12 h-12 bg-white rounded-lg">
+                    <Building2 />
+                </div>
+                <div className="flex flex-col">
+                    <p className="font-semibold text-slate-700">Hello, JB WEBDEVELOPER</p>
+                    <span className="text-sm">Garat</span>
+                </div>
+            </div>
+            <nav className="flex space-x-4">
+                {navLinks.map((link) => (
+                    <Link href={link.href} className={pathname === link.href ? "py-3 border-b-3 border-blue-600 text-slate-700 font-semibold" : "py-3 text-slate-700 font-semibold"} key={link.title}>
+                        {link.title}
+                    </Link>
+                ))}
+            </nav>
+        </div>
+    );
+};
+
+export default HomeNavbar;
