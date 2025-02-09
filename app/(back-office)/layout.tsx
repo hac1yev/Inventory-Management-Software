@@ -1,10 +1,11 @@
 import Header from "@/components/dashboard/Header";
+import Sidebar from "@/components/dashboard/Sidebar";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
     return (
         <div className="flex">
-            <div className="w-64 min-h-screen bg-slate-900 text-slate-50">Sidebar</div>
-            <main className="w-100 bg-slate-100 min-h-screen">
+            <Sidebar />
+            <main className="w-full bg-slate-100 min-h-screen">
                 <Header />
                 {children}
             </main>
