@@ -13,7 +13,7 @@ const Header = () => {
             </div>
             <div className="flex items-center">
                 <div className="pr-2 border-r border-gray-300">
-                    <button className="p-1 bg-blue-600 rounded-lg">
+                    <button className="p-1 bg-blue-600 rounded-lg hover:opacity-80">
                         <Plus className="text-slate-50 w-4 h-4" />
                     </button>
                 </div>
