@@ -1,7 +1,11 @@
+import FixedHeader from "@/components/dashboard/FixedHeader";
 
 const Inventory = () => {
     return (
-        <div>Inventory</div>
+        <div>
+            <FixedHeader />
+            <h2>Inventory Creation Options</h2>
+        </div>
     );
 };
 

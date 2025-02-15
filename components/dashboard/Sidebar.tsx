@@ -1,6 +1,24 @@
-import { BaggageClaim, BarChart4, Cable, ChevronLeft, Files, Home, ShoppingBag, ShoppingBasket, ShoppingCart } from "lucide-react";
+"use client";
+
+import { BarChart4, Cable, ChevronLeft, Files, Home, ShoppingBag, ShoppingBasket, ShoppingCart } from "lucide-react";
 import Link from "next/link";
 import SubscriptionCard from "./SubscriptionCard";
+import SidebarDropdownLink from "./SidebarDropdownLink";
+
+const inventoryLinks = [
+    {
+        title: 'Items',
+        href: "/"
+    },
+    {
+        title: 'Items Groups',
+        href: "/"
+    },
+    {
+        title: 'Inventory Adjustments',
+        href: "/"
+    },
+];
 
 const Sidebar = () => {
     return (
@@ -16,10 +34,7 @@ const Sidebar = () => {
                         <Home className="w-4 h-4" />
                         <span>Home</span>
                     </Link>
-                    <button className="flex items-center space-x-2 p-2">
-                        <BaggageClaim className="w-4 h-4" />
-                        <span>Inventory</span>
-                    </button>
+                    <SidebarDropdownLink items={inventoryLinks} title={"inventory"} />
                     <button className="flex items-center space-x-2 p-2">
                         <ShoppingBasket className="w-4 h-4" />
                         <span>Sales</span>
@@ -41,7 +56,6 @@ const Sidebar = () => {
                         <span>Documents</span>
                     </Link>
                 </nav>
-
             </div>
 
             <div>
