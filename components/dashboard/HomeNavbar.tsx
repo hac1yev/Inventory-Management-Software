@@ -27,8 +27,8 @@ const HomeNavbar = () => {
     ];
 
     return (
-        <div className="sticky flex flex-col justify-between bg-green-300 px-5 pt-5 header-bg border-b border-slate-200" style={{ top: '-30px' }}>
-            <div className="flex space-x-3">
+        <div className="sticky z-10 flex flex-col justify-between bg-green-300 px-5 pt-5 header-bg border-b border-slate-200" style={{ top: '-30px' }}>
+            <div className="flex space-x-3 mb-2">
                 <div className="flex items-center justify-center w-12 h-12 bg-white rounded-lg">
                     <Building2 />
                 </div>

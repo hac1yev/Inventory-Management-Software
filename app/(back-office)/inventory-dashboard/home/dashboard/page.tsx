@@ -3,7 +3,7 @@ import SalesOverview from "@/components/dashboard/SalesOverview";
 
 const Dashboard = () => {
     return (
-        <div>
+        <div style={{ height: '1000vh' }}>
             <DashboardBanner />
             <SalesOverview />
         </div>

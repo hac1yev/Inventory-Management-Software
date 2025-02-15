@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Header = () => {
     return (
-        <div className="sticky top-0 z-10 bg-slate-100 h-12 flex items-center justify-between px-8 border-b border-slate-200 shadow-sm">
+        <div className="sticky top-0 z-20 bg-slate-100 h-12 flex items-center justify-between px-8 border-b border-slate-200 shadow-sm">
             <div className="flex gap-3">
                 <button>
                     <History className="w-6 h-6" />
