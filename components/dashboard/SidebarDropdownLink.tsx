@@ -1,12 +1,12 @@
 "use client";
 
 import { Collapsible, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { BaggageClaim, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import CollapsibleLinks from "./CollapsibleLinks";
 
-const SidebarDropdownLink = ({ title, items }: DropdownLinkType) => {
+const SidebarDropdownLink = ({ title, items, icon: Icon }: DropdownLinkType) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
@@ -14,10 +14,10 @@ const SidebarDropdownLink = ({ title, items }: DropdownLinkType) => {
             <Collapsible open={isOpen} onOpenChange={setIsOpen}>
 
                 <CollapsibleTrigger 
-                    className="flex items-center justify-between w-full space-x-2 p-2"
+                    className={isOpen ? "flex items-center justify-between w-full space-x-2 p-2 text-blue-500" : "flex items-center justify-between w-full space-x-2 p-2"}
                 >
                     <div className="flex items-center space-x-2">
-                        <BaggageClaim className="w-4 h-4" />
+                        <Icon className="w-4 h-4" />
                         <span>{title}</span>
                     </div>
                     <motion.div 

@@ -1,30 +1,16 @@
-"use client";
+"use client"
 
-import { BarChart4, Cable, ChevronLeft, Files, Home, ShoppingBag, ShoppingBasket, ShoppingCart } from "lucide-react";
+import { BaggageClaim, BarChart4, Cable, ChevronLeft, Files, Home, ShoppingBag, ShoppingCart, WeightIcon } from "lucide-react";
 import Link from "next/link";
 import SubscriptionCard from "./SubscriptionCard";
 import SidebarDropdownLink from "./SidebarDropdownLink";
-
-const inventoryLinks = [
-    {
-        title: 'Items',
-        href: "/"
-    },
-    {
-        title: 'Items Groups',
-        href: "/"
-    },
-    {
-        title: 'Inventory Adjustments',
-        href: "/"
-    },
-];
+import { inventoryLinks, salesLinks } from "@/dummy-data/data";
 
 const Sidebar = () => {
     return (
-        <div className="w-80 min-h-screen bg-slate-900 text-slate-50 flex flex-col justify-between">
+        <div className="sticky top-0 z-30 w-80 h-screen bg-slate-900 text-slate-50 flex flex-col justify-between overflow-y-scroll scrollbar-hide">
             <div className="flex flex-col">
-                <Link href={"/"} className="flex items-center space-x-2 bg-slate-950 py-3 px-2">
+                <Link href={"/"} className="sticky top-0 flex items-center space-x-2 bg-slate-950 py-3 px-2">
                     <ShoppingCart />
                     <span className="font-bold text-xl">Investory</span>
                 </Link>
@@ -34,11 +20,8 @@ const Sidebar = () => {
                         <Home className="w-4 h-4" />
                         <span>Home</span>
                     </Link>
-                    <SidebarDropdownLink items={inventoryLinks} title={"inventory"} />
-                    <button className="flex items-center space-x-2 p-2">
-                        <ShoppingBasket className="w-4 h-4" />
-                        <span>Sales</span>
-                    </button>
+                    <SidebarDropdownLink items={inventoryLinks} title={"Inventory"} icon={BaggageClaim} />
+                    <SidebarDropdownLink items={salesLinks} title={"Sales"} icon={WeightIcon} />
                     <button className="flex items-center space-x-2 p-2">
                         <ShoppingBag className="w-4 h-4" />
                         <span>Purchases</span>

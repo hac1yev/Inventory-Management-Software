@@ -10,19 +10,19 @@ const HomeNavbar = () => {
     const navLinks = [
         {
             title: 'Dashboard',
-            href: '/inventory-dashboard/home/dashboard'
+            href: '/dashboard/home/overview'
         },
         {
             title: 'Getting Started',
-            href: '/inventory-dashboard/home/getting-started'
+            href: '/dashboard/home/getting-started'
         },
         {
             title: 'Recent Updates',
-            href: '/inventory-dashboard/home/updates'
+            href: '/dashboard/home/updates'
         },
         {
             title: 'Announcements',
-            href: '/inventory-dashboard/home/announcements'
+            href: '/dashboard/home/announcements'
         }
     ];
 

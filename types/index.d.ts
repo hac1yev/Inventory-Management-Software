@@ -19,4 +19,5 @@ declare type CollapseLinkType = {
 declare type DropdownLinkType = {
     title: string;
     items: CollapseLinkType[];
+    icon: React.ElementType;
 }
