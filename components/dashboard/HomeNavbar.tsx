@@ -5,10 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const HomeNavbar = () => {
-    const pathname = usePathname();
-
-    console.log(pathname);
-    
+    const pathname = usePathname();    
 
     const navLinks = [
         {
@@ -30,7 +27,7 @@ const HomeNavbar = () => {
     ];
 
     return (
-        <div className="sticky flex flex-col justify-between h-32 bg-green-300 px-5 pt-5 header-bg border-b border-slate-200" style={{ top: '-30px' }}>
+        <div className="sticky flex flex-col justify-between bg-green-300 px-5 pt-5 header-bg border-b border-slate-200" style={{ top: '-30px' }}>
             <div className="flex space-x-3">
                 <div className="flex items-center justify-center w-12 h-12 bg-white rounded-lg">
                     <Building2 />
