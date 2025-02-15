@@ -1,29 +1,48 @@
 "use client";
 
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
-import { BaggageClaim, ChevronDown, ChevronUp } from "lucide-react";
+import { Collapsible, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { BaggageClaim, ChevronDown } from "lucide-react";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import CollapsibleLinks from "./CollapsibleLinks";
 
-const SidebarDropdownLink = ({ title,items }: DropdownLinkType) => {
-    const [arrow,setArrow] = useState(false);
+const SidebarDropdownLink = ({ title, items }: DropdownLinkType) => {
+    const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <Collapsible>
-            <CollapsibleTrigger onClick={() => setArrow((prev) => !prev)} className="flex items-center justify-between w-full space-x-2 p-2">
-                <div className="flex items-center space-x-2">
-                    <BaggageClaim className="w-4 h-4" />
-                    <span>{title}</span>
-                </div>
-                {!arrow && <ChevronDown className="w-5 h-5" />}
-                {arrow && <ChevronUp className="w-5 h-5" />}
-            </CollapsibleTrigger>
-            <CollapsibleContent className="my-1">
-                {items.map((item, i) => (
-                    <CollapsibleLinks key={i} {...item} />
-                ))}
-            </CollapsibleContent>
-        </Collapsible>
+        <div className="w-full">
+            <Collapsible open={isOpen} onOpenChange={setIsOpen}>
+
+                <CollapsibleTrigger 
+                    className="flex items-center justify-between w-full space-x-2 p-2"
+                >
+                    <div className="flex items-center space-x-2">
+                        <BaggageClaim className="w-4 h-4" />
+                        <span>{title}</span>
+                    </div>
+                    <motion.div 
+                        animate={{ rotate: isOpen ? 180 : 0 }} 
+                        transition={{ duration: 0.3 }}
+                    >
+                        <ChevronDown className="w-5 h-5" />
+                    </motion.div>
+                </CollapsibleTrigger>
+
+                <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={isOpen ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="overflow-hidden"
+                >
+                    <div className="my-1">
+                        {items.map((item, i) => (
+                            <CollapsibleLinks key={i} {...item} />
+                        ))}
+                    </div>
+                </motion.div>
+            </Collapsible>
+        </div>
     );
 };
 
