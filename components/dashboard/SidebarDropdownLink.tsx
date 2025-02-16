@@ -1,7 +1,7 @@
 "use client";
 
 import { Collapsible, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { ChevronDown } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import CollapsibleLinks from "./CollapsibleLinks";
@@ -21,10 +21,10 @@ const SidebarDropdownLink = ({ title, items, icon: Icon }: DropdownLinkType) => 
                         <span>{title}</span>
                     </div>
                     <motion.div 
-                        animate={{ rotate: isOpen ? 180 : 0 }} 
+                        animate={{ rotate: isOpen ? 90 : 0 }} 
                         transition={{ duration: 0.3 }}
                     >
-                        <ChevronDown className="w-5 h-5" />
+                        <ChevronRight className="w-5 h-5" />
                     </motion.div>
                 </CollapsibleTrigger>
 
