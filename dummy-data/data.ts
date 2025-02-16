@@ -51,3 +51,38 @@ export const salesLinks = [
         href: "/"
     },
 ];
+
+export const inventoryOptionData = [
+    {
+        title: "Item Groups",
+        description: "Create multible variants of the same item using Item Groups",
+        link: '/new',
+        linkTitle: 'New Item Group',
+        enabled: true,
+        imageUrl: '/images/items-group.png'
+    },
+    {
+        title: "Item",
+        description: "Create standalone items and services that you buy and sell",
+        link: '/new',
+        linkTitle: 'New Item',
+        enabled: true,
+        imageUrl: '/images/items.png'
+    },
+    {
+        title: "Composite Items",
+        description: "Bundle different items together and sell them as kits",
+        link: '/new',
+        linkTitle: 'New Composite Item',
+        enabled: true,
+        imageUrl: '/images/composite.png'
+    },
+    {
+        title: "Price Lists",
+        description: "Tweak your item prices for specific contacts or transactions",
+        link: '/new',
+        linkTitle: 'New Composite Item',
+        enabled: false,
+        imageUrl: '/images/price-list.png'
+    },
+];

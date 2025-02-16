@@ -8,7 +8,7 @@ import { inventoryLinks, salesLinks } from "@/dummy-data/data";
 
 const Sidebar = () => {
     return (
-        <div className="sticky top-0 z-30 w-80 h-screen bg-slate-900 text-slate-50 flex flex-col justify-between overflow-y-scroll scrollbar-hide">
+        <div className="sidebar sticky top-0 z-30 w-80 h-screen bg-slate-900 text-slate-50 flex flex-col justify-between overflow-y-scroll scrollbar-hide">
             <div className="flex flex-col">
                 <Link href={"/"} className="sticky top-0 flex items-center space-x-2 bg-slate-950 py-3 px-2">
                     <ShoppingCart />

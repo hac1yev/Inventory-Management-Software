@@ -21,3 +21,14 @@ declare type DropdownLinkType = {
     items: CollapseLinkType[];
     icon: React.ElementType;
 }
+
+declare type InventoryOptionType = {
+    optionData: {
+        title: string;
+        description: string;
+        link: string;
+        linkTitle: string;
+        enabled: boolean;
+        imageUrl: string;
+    }
+}
