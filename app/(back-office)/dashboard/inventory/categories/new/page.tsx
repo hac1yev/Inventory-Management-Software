@@ -1,19 +1,6 @@
-import { useForm } from "react-hook-form"
 import InventoryFormHeader from "@/components/dashboard/InventoryFormHeader";
-
-type Inputs = {
-    example: string
-    exampleRequired: string
-}
   
 const NewCategory = () => {
-    const {
-        register,
-        handleSubmit,
-        watch,
-        formState: { errors },
-    } = useForm<Inputs>()
-
     return (
         <div>
             <InventoryFormHeader title="New Category" href="/" />
