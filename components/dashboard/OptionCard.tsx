@@ -5,7 +5,7 @@ const OptionCard = ({ optionData }: InventoryOptionType) => {
   const { title, description, link, linkTitle, enabled, imageUrl } = optionData;
 
   return (
-    <div className="shadow-xl bg-white flex flex-col items-center justify-center gap-4 p-8">
+    <div className="shadow-md rounded-md bg-white flex flex-col items-center justify-center gap-4 p-8 hover:shadow-xl">
       <h2 className="text-xl font-semibold">{title}</h2>
       <div>
         <Image
