@@ -2,9 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
     try {
-        const { title,description } = await req.json();
-        const category = { title,description };
-        return NextResponse.json(category);
+        const { title,abbreviation } = await req.json();
+        const unit = { title,abbreviation };
+        return NextResponse.json(unit);
     } catch (error) {
         return NextResponse.json({
             error,

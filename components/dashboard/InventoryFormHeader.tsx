@@ -1,3 +1,4 @@
+import { CollapseLinkType } from "@/types";
 import { X } from "lucide-react";
 import Link from "next/link";
 

@@ -1,7 +1,7 @@
 export const inventoryLinks = [
     {
         title: 'Items',
-        href: "/dashboard/inventory/items/new"
+        href: "/dashboard/inventory/items"
     },
     {
         title: 'Categories',
@@ -66,35 +66,43 @@ export const salesLinks = [
 
 export const inventoryOptionData = [
     {
-        title: "Item Groups",
-        description: "Create multible variants of the same item using Item Groups",
-        link: '/new',
-        linkTitle: 'New Item Group',
-        enabled: true,
-        imageUrl: '/images/items-group.png'
-    },
-    {
-        title: "Item",
+        title: "Items",
         description: "Create standalone items and services that you buy and sell",
-        link: '/new',
+        link: '/dashboard/inventory/items/new',
         linkTitle: 'New Item',
         enabled: true,
         imageUrl: '/images/items.png'
     },
     {
-        title: "Composite Items",
+        title: "Categories",
         description: "Bundle different items together and sell them as kits",
-        link: '/new',
-        linkTitle: 'New Composite Item',
+        link: '/dashboard/inventory/categories/new',
+        linkTitle: 'New Category',
         enabled: true,
         imageUrl: '/images/composite.png'
     },
     {
-        title: "Price Lists",
+        title: "Brands",
         description: "Tweak your item prices for specific contacts or transactions",
-        link: '/new',
-        linkTitle: 'New Composite Item',
-        enabled: false,
+        link: '/dashboard/inventory/brands/new',
+        linkTitle: 'New Brand',
+        enabled: true,
         imageUrl: '/images/price-list.png'
+    },
+    {
+        title: "Warehouse",
+        description: "Tweak your item prices for specific contacts or transactions",
+        link: '/dashboard/inventory/warehouse/new',
+        linkTitle: 'New Warehouse',
+        enabled: true,
+        imageUrl: '/images/warehouse.png'
+    },
+    {
+        title: "Units",
+        description: "Tweak your item prices for specific contacts or transactions",
+        link: '/dashboard/inventory/units/new',
+        linkTitle: 'New Unit',
+        enabled: true,
+        imageUrl: '/images/united.png'
     },
 ];

@@ -5,8 +5,11 @@ import Link from "next/link";
 import SubscriptionCard from "./SubscriptionCard";
 import SidebarDropdownLink from "./SidebarDropdownLink";
 import { inventoryLinks, salesLinks } from "@/dummy-data/data";
+import { usePathname } from "next/navigation";
 
 const Sidebar = () => {
+    const pathname = usePathname();
+    
     return (
         <div className="sidebar sticky top-0 z-30 w-80 h-screen bg-slate-900 text-slate-50 flex flex-col justify-between overflow-y-scroll scrollbar-hide">
             <div className="flex flex-col">
@@ -16,7 +19,7 @@ const Sidebar = () => {
                 </Link>
 
                 <nav className="flex flex-col gap-2 py-6 px-3">
-                    <Link href={"/"} className="flex items-center space-x-2 bg-blue-500 text-slate-50 p-2 rounded-md">
+                    <Link href={"/"} className={pathname.startsWith("/dashboard/home") ? "flex items-center space-x-2 p-2 rounded-md bg-blue-500 text-slate-50" : "flex items-center space-x-2 p-2 rounded-md"}>
                         <Home className="w-4 h-4" />
                         <span>Home</span>
                     </Link>
@@ -26,15 +29,15 @@ const Sidebar = () => {
                         <ShoppingBag className="w-4 h-4" />
                         <span>Purchases</span>
                     </button>
-                    <Link href={"/"} className="flex items-center space-x-2 p-2">
+                    <Link href={"/"} className={pathname === '/dashboard/integrations' ? "flex items-center space-x-2 p-2 rounded-md bg-blue-500 text-slate-50" : "flex items-center space-x-2 p-2 rounded-md"}>
                         <Cable className="w-4 h-4" />
                         <span>Integrations</span>
                     </Link>
-                    <Link href={"/"} className="flex items-center space-x-2 p-2">
+                    <Link href={"/"} className={pathname === '/dashboard/reports' ? "flex items-center space-x-2 p-2 rounded-md bg-blue-500 text-slate-50" : "flex items-center space-x-2 p-2 rounded-md"}>
                         <BarChart4 className="w-4 h-4" />
                         <span>Reports</span>
                     </Link>
-                    <Link href={"/"} className="flex items-center space-x-2 p-2">
+                    <Link href={"/"} className={pathname === '/dashboard/documents' ? "flex items-center space-x-2 p-2 rounded-md bg-blue-500 text-slate-50" : "flex items-center space-x-2 p-2 rounded-md"}>
                         <Files className="w-4 h-4" />
                         <span>Documents</span>
                     </Link>

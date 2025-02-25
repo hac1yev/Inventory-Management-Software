@@ -38,7 +38,7 @@ const NewCategory = () => {
 
   return (
     <div>
-      <InventoryFormHeader title="New Category" href="/" />
+      <InventoryFormHeader title="New Category" href="/dashboard/inventory" />
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="w-full max-w-6xl my-4 mx-auto p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
