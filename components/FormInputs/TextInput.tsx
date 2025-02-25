@@ -1,3 +1,5 @@
+import { InputProps } from "@/types";
+
 export default function TextInput({
     label,
     name,
@@ -6,7 +8,8 @@ export default function TextInput({
     isRequired = true,
     type = "text",
     className = "sm:col-span-2",
-  }) {
+  }: InputProps) {
+
     return (
       <div className={className}>
         <label

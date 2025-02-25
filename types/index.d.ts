@@ -1,3 +1,5 @@
+import { InputHTMLAttributes } from "react";
+
 declare type SalesActivityType = {
     href: string;
     number: number;
@@ -32,3 +34,20 @@ declare type InventoryOptionType = {
         imageUrl: string;
     }
 }
+
+declare interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+    label: string;
+    register: UseFormRegister<FieldValues>;
+    errors: FieldErrors;
+    isRequired?: boolean;
+    className?: string;
+}  
+
+declare interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
+    label: string;
+    register: UseFormRegister<FieldValues>;
+    errors: FieldErrors;
+    name: string;
+    isRequired?: boolean;
+    className?: string;
+}  
