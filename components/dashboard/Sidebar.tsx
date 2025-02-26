@@ -19,7 +19,7 @@ const Sidebar = () => {
                 </Link>
 
                 <nav className="flex flex-col gap-2 py-6 px-3">
-                    <Link href={"/"} className={pathname.startsWith("/dashboard/home") ? "flex items-center space-x-2 p-2 rounded-md bg-blue-500 text-slate-50" : "flex items-center space-x-2 p-2 rounded-md"}>
+                    <Link href={"/dashboard/home/overview"} className={pathname.startsWith("/dashboard/home") ? "flex items-center space-x-2 p-2 rounded-md bg-blue-500 text-slate-50" : "flex items-center space-x-2 p-2 rounded-md"}>
                         <Home className="w-4 h-4" />
                         <span>Home</span>
                     </Link>

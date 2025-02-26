@@ -1,4 +1,5 @@
 import { InputHTMLAttributes } from "react";
+import { FieldErrors } from "react-hook-form";
 
 declare type SalesActivityType = {
     href: string;
@@ -51,3 +52,15 @@ declare interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaEleme
     isRequired?: boolean;
     className?: string;
 }  
+
+declare type SelectType = {
+    label: string;
+    name: string;
+    register: UseFormRegister<FieldValues>;
+    errors: FieldErrors;
+    className?: string;
+    options?: {
+        label: string;
+        value: string;
+    }[];
+}

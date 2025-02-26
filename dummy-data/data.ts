@@ -1,7 +1,11 @@
 export const inventoryLinks = [
     {
+        title: 'All Inventory Items',
+        href: '/dashboard/inventory'
+    },
+    {
         title: 'Items',
-        href: "/dashboard/inventory/items"
+        href: "/dashboard/inventory/items/new"
     },
     {
         title: 'Categories',
@@ -105,4 +109,77 @@ export const inventoryOptionData = [
         enabled: true,
         imageUrl: '/images/united.png'
     },
+];
+
+export const warehouseSelectOptions = [
+    {
+        label: "Main",
+        value: "main"
+    },
+    {
+        label: "Branch",
+        value: "branch"
+    }
+];
+
+export const inventoryItemCategories = [
+    {
+        label: "Electronics",
+        value: "electronics"
+    },
+    {
+        label: "Clothes",
+        value: "clothes"
+    }
+];
+
+export const inventoryItemUnits = [
+    {
+        label: "Kg",
+        value: "kg"
+    },
+    {
+        label: "Psc",
+        value: "psc"
+    }
+];
+
+export const inventoryItemBrands = [
+    {
+        label: "HP",
+        value: "hp"
+    },
+    {
+        label: "Dell",
+        value: "dell"
+    }
+];
+
+export const inventoryItemWarehouse = [
+    {
+        label: "Warehouse A",
+        value: "warehouseA"
+    },
+    {
+        label: "Warehouse B",
+        value: "warehouseB"
+    },
+    {
+        label: "Warehouse C",
+        value: "warehouseC"
+    }
+];
+export const inventoryItemSuplier = [
+    {
+        label: "Suplier A",
+        value: "SuplierA"
+    },
+    {
+        label: "Suplier B",
+        value: "SuplierB"
+    },
+    {
+        label: "Suplier C",
+        value: "SuplierC"
+    }
 ];

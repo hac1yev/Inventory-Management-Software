@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 import CollapsibleLinks from "./CollapsibleLinks";
 import { DropdownLinkType } from "@/types";
 import { usePathname } from "next/navigation";
-import Link from "next/link";
 
 const SidebarDropdownLink = ({ title, items, icon: Icon }: DropdownLinkType) => {
     const pathname = usePathname();
@@ -21,20 +20,18 @@ const SidebarDropdownLink = ({ title, items, icon: Icon }: DropdownLinkType) => 
         <div className="w-full">
             <Collapsible open={isOpen} onOpenChange={setIsOpen}>
 
-                <Link href={"/dashboard/inventory"}>
-                    <CollapsibleTrigger className={isOpen ? "flex items-center justify-between w-full space-x-2 p-2 text-blue-500" : "flex items-center justify-between w-full space-x-2 p-2"}>
-                            <div className="flex items-center space-x-2">
-                                <Icon className="w-4 h-4" />
-                                <span>{title}</span>
-                            </div>
-                            <motion.div 
-                                animate={{ rotate: isOpen ? 90 : 0 }} 
-                                transition={{ duration: 0.3 }}
-                            >
-                                <ChevronRight className="w-5 h-5" />
-                            </motion.div>
-                    </CollapsibleTrigger>
-                </Link>
+                <CollapsibleTrigger className={isOpen ? "flex items-center justify-between w-full space-x-2 p-2 text-blue-500" : "flex items-center justify-between w-full space-x-2 p-2"}>
+                        <div className="flex items-center space-x-2">
+                            <Icon className="w-4 h-4" />
+                            <span>{title}</span>
+                        </div>
+                        <motion.div 
+                            animate={{ rotate: isOpen ? 90 : 0 }} 
+                            transition={{ duration: 0.3 }}
+                        >
+                            <ChevronRight className="w-5 h-5" />
+                        </motion.div>
+                </CollapsibleTrigger>
 
                 <motion.div
                     initial={{ height: 0, opacity: 0 }}
