@@ -78,12 +78,10 @@
     }
 }
 
-/* Hide scrollbar for Chrome, Safari, and Edge */
 .sidebar.scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
 
-/* Hide scrollbar for Firefox */
 .sidebar.scrollbar-hide {
   scrollbar-width: none;
 }
