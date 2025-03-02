@@ -1,3 +1,4 @@
+import { InventorySummaryType } from "@/types";
 
 const InventorySummaryCard = ({ title, number }: InventorySummaryType) => {
     return (
