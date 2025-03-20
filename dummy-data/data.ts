@@ -193,7 +193,7 @@ export const inventoryItemSuplier = [
     }
 ];
 
-export const inventoryAdjustmentBranchs = [
+export const TransferInventoryAdjustmentBranchs = [
     {
         label: "Branch A",
         value: "branchA"
@@ -201,5 +201,24 @@ export const inventoryAdjustmentBranchs = [
     {
         label: "Branch B",
         value: "branchB"
+    },
+];
+
+export const AddInventoryAdjustmentBranchs = [
+    {
+        label: "Branch A",
+        value: "branchA"
+    },
+    {
+        label: "Branch B",
+        value: "branchB"
+    },
+    {
+        label: "Main A",
+        value: "mainA"
+    },
+    {
+        label: "Main B",
+        value: "mainB"
     },
 ];

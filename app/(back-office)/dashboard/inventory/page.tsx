@@ -6,7 +6,7 @@ const Inventory = () => {
     return (
         <div>
             <FixedHeader />
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6" style={{ padding: '2.5% 5.5%' }}>
+            <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-6" style={{ padding: '2.5% 5.5%' }}>
                 {inventoryOptionData.map((card,i) => (
                     <OptionCard key={i} optionData={card} />
                 ))}
