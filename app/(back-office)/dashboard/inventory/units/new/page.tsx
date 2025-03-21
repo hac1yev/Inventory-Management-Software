@@ -5,6 +5,8 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import SubmitButton from "@/components/FormInputs/SubmitButton";
 import TextInput from "@/components/FormInputs/TextInput";
 import { useState } from "react";
+import toast from "react-hot-toast";
+import axios from "axios";
 
 const NewUnit = () => {
   const [loading,setLoading] = useState(false);
@@ -18,16 +20,14 @@ const NewUnit = () => {
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     setLoading(true);
-    try {
-      const response = await fetch('/api/units', {
-        method: 'POST',
-        body: JSON.stringify(data),
+    try {      
+      const response = await axios.post('/api/units', JSON.stringify(data), {
         headers: {
           "Content-type": "application/json"
         } 
       });
-      const result = await response.json();
-      console.log(result);
+      console.log(response);
+      toast.success("New Unit Created Successfully!");
       reset();
     } catch (error) {
       console.log(error);
@@ -51,8 +51,8 @@ const NewUnit = () => {
             className="w-full"
           />
           <TextInput
-            label="Unit Abrreviation"
-            name="abrreviation"
+            label="Unit Abbreviation"
+            name="abbreviation"
             register={register}
             errors={errors}
             className="w-full"

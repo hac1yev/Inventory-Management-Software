@@ -5,6 +5,8 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import SubmitButton from "@/components/FormInputs/SubmitButton";
 import TextInput from "@/components/FormInputs/TextInput";
 import { useState } from "react";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const NewBrand = () => {
   const [loading,setLoading] = useState(false);
@@ -19,15 +21,13 @@ const NewBrand = () => {
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     setLoading(true);
     try {
-      const response = await fetch('/api/brands', {
-        method: 'POST',
-        body: JSON.stringify(data),
+      const response = await axios.post('/api/brands', JSON.stringify(data), {
         headers: {
           "Content-type": "application/json"
         } 
       });
-      const result = await response.json();
-      console.log(result);
+      console.log(response);
+      toast.success("New Brand Created Successfully!");
       reset();
     } catch (error) {
       console.log(error);

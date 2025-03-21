@@ -5,7 +5,9 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import TextareaInput from "@/components/FormInputs/TextareaInput";
 import SubmitButton from "@/components/FormInputs/SubmitButton";
 import TextInput from "@/components/FormInputs/TextInput";
+import axios from 'axios';
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 const NewCategory = () => {
   const [loading,setLoading] = useState(false);
@@ -20,15 +22,13 @@ const NewCategory = () => {
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     setLoading(true);
     try {
-      const response = await fetch('/api/categories', {
-        method: 'POST',
-        body: JSON.stringify(data),
+      const response = await axios.post('/api/categories', JSON.stringify(data), {
         headers: {
           "Content-type": "application/json"
         } 
       });
-      const result = await response.json();
-      console.log(result);
+      console.log(response);
+      toast.success('New Category Created SuccessFully!');
       reset();
     } catch (error) {
       console.log(error);
