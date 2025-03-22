@@ -5,13 +5,13 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import TextareaInput from "@/components/FormInputs/TextareaInput";
 import SubmitButton from "@/components/FormInputs/SubmitButton";
 import TextInput from "@/components/FormInputs/TextInput";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SelectInput from "@/components/FormInputs/SelectInput";
-import { warehouseSelectOptions } from "@/dummy-data/data";
+import axios from "axios";
 
 const NewWarehouse = () => {
   const [loading,setLoading] = useState(false);
-
+  const [warehouseSelectOptions,setWarehouseSelectOptions] = useState([]);
   const {
     register,
     handleSubmit,
@@ -19,18 +19,26 @@ const NewWarehouse = () => {
     reset
   } = useForm();
 
-  const onSubmit: SubmitHandler<FieldValues> = async (data) => {
-    setLoading(true);
+  useEffect(() => {
+    (async function() {
+      try {
+        const response = await axios.get("/api/warehouse/types");
+        setWarehouseSelectOptions(response.data.data);
+      } catch (error) {
+        console.log(error);
+      }
+    })()
+  }, []);
+  
+  const onSubmit: SubmitHandler<FieldValues> = async (data) => {    
+    setLoading(true);    
     try {
-      const response = await fetch('/api/warehouse', {
-        method: 'POST',
-        body: JSON.stringify(data),
+      const response = await axios.post('/api/warehouse', JSON.stringify(data), {
         headers: {
           "Content-type": "application/json"
         } 
       });
-      const result = await response.json();
-      console.log(result);
+      console.log(response);
       reset();
     } catch (error) {
       console.log(error);
@@ -48,7 +56,7 @@ const NewWarehouse = () => {
         <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
           <SelectInput 
             label="Select the Warehouse Type"
-            name="type"
+            name="warehouse_type_id"
             register={register}
             errors={errors}
             className="w-full"

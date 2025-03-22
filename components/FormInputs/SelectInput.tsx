@@ -28,10 +28,10 @@ export default function SelectInput({
           <option value={""} disabled selected>
             Select an option
           </option>
-          {options.map((option, i) => {
+          {options.map((option) => {
             return (
-              <option key={i} value={option.value}>
-                {option.label}
+              <option key={option.id} value={option.id}>
+                {option.title}
               </option>
             );
           })}

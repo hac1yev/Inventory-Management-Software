@@ -61,8 +61,8 @@ declare type SelectType = {
     className?: string;
     isRequired?: boolean;
     options?: {
-        label: string;
-        value: string;
+        id: number;
+        title: string;
     }[];
 };
 

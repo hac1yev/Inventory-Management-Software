@@ -43,6 +43,22 @@ const AddInventoryForm = () => {
     >
       <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
         <TextInput
+          label="Rederence Number"
+          name="referenceNumber"
+          type="number"
+          register={register}
+          errors={errors}
+          className="w-full"
+        />
+        <TextInput
+          label="Date"
+          name="date"
+          type="date"
+          register={register}
+          errors={errors}
+          className="w-full"
+        />
+        <TextInput
           label="Enter Quantity of Stock to Add"
           name="addStockQty"
           type="number"

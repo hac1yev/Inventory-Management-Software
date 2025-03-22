@@ -119,17 +119,6 @@ export const inventoryOptionData = [
     },
 ];
 
-export const warehouseSelectOptions = [
-    {
-        label: "Main",
-        value: "main"
-    },
-    {
-        label: "Branch",
-        value: "branch"
-    }
-];
-
 export const inventoryItemCategories = [
     {
         label: "Electronics",
