@@ -73,6 +73,7 @@ const NewSupplier = () => {
             type="email"
             register={register}
             errors={errors}
+            className="w-full"
           />
           <TextInput
             label="Supplier Address"
@@ -100,7 +101,6 @@ const NewSupplier = () => {
             name="taxID"
             register={register}
             errors={errors}
-            className="w-full"
           />
           <TextareaInput 
             register={register}
