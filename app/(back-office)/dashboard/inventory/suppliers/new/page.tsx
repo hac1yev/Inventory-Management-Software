@@ -6,10 +6,9 @@ import TextareaInput from "@/components/FormInputs/TextareaInput";
 import SubmitButton from "@/components/FormInputs/SubmitButton";
 import TextInput from "@/components/FormInputs/TextInput";
 import { useEffect, useState } from "react";
-import SelectInput from "@/components/FormInputs/SelectInput";
 import axios from "axios";
 
-const NewWarehouse = () => {
+const NewSupplier = () => {
   const [loading,setLoading] = useState(false);
   const [warehouseSelectOptions,setWarehouseSelectOptions] = useState([]);
   const {
@@ -33,7 +32,7 @@ const NewWarehouse = () => {
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {    
     setLoading(true);    
     try {
-      const response = await axios.post('/api/warehouse', JSON.stringify(data), {
+      const response = await axios.post('/api/supplier', JSON.stringify(data), {
         headers: {
           "Content-type": "application/json"
         } 
@@ -48,44 +47,78 @@ const NewWarehouse = () => {
 
   return (
     <div>
-      <InventoryFormHeader title="New Warehouse" href="/dashboard/inventory" />
+      <InventoryFormHeader title="New Supplier" href="/dashboard/inventory" />
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="w-full max-w-6xl my-4 mx-auto p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
       >
         <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
-          <SelectInput 
-            label="Select the Warehouse Type"
-            name="warehouse_type_id"
-            register={register}
-            errors={errors}
-            className="w-full"
-            options={warehouseSelectOptions}
-          />
           <TextInput
-            label="Warehouse Title"
-            name="title"
+            label="Supplier Name"
+            name="name"
             register={register}
             errors={errors}
             className="w-full"
           />
           <TextInput
-            label="Warehouse Location"
-            name="location"
+            label="Supplier Phone"
+            name="phone"
             register={register}
             errors={errors}
+            className="w-full"
+          />
+          <TextInput
+            label="Supplier Email"
+            name="email"
+            type="email"
+            register={register}
+            errors={errors}
+          />
+          <TextInput
+            label="Supplier Address"
+            name="address"
+            register={register}
+            errors={errors}
+            className="w-full"
+          />
+          <TextInput
+            label="Supplier Contact Person"
+            name="contactPerson"
+            register={register}
+            errors={errors}
+            className="w-full"
+          />
+          <TextInput
+            label="Supplier Code"
+            name="supplierCode"
+            register={register}
+            errors={errors}
+            className="w-full"
+          />
+          <TextInput
+            label="Supplier TIN"
+            name="taxID"
+            register={register}
+            errors={errors}
+            className="w-full"
           />
           <TextareaInput 
             register={register}
             errors={errors}
-            name="description"
-            label="Warehouse Description"
+            name="paymentTerms"
+            label="Supplier Payment terms"
+          />
+          <TextareaInput 
+            register={register}
+            errors={errors}
+            name="notes"
+            label="Notes"
           />
         </div>
-        <SubmitButton loading={loading} title={"Category"} />
+        <SubmitButton loading={loading} title={"Supplier"} />
       </form>
     </div>
   );
 };
 
-export default NewWarehouse;
+export default NewSupplier;

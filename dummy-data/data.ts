@@ -20,12 +20,16 @@ export const inventoryLinks = [
         href: "/dashboard/inventory/units/new"
     },
     {
-        title: 'Warehouse',
-        href: "/dashboard/inventory/warehouse/new"
+        title: 'Warehouses',
+        href: "/dashboard/inventory/warehouses/new"
     },
     {
         title: 'Inventory Adjustments',
         href: "/dashboard/inventory/adjustments/new"
+    },
+    {
+        title: 'Suppliers',
+        href: "/dashboard/inventory/suppliers/new"
     },
 ];
 
@@ -94,9 +98,9 @@ export const inventoryOptionData = [
         imageUrl: '/images/price-list.png'
     },
     {
-        title: "Warehouse",
+        title: "Warehouses",
         description: "Tweak your item prices for specific contacts or transactions",
-        link: '/dashboard/inventory/warehouse/new',
+        link: '/dashboard/inventory/warehouses/new',
         linkTitle: 'New Warehouse',
         enabled: true,
         imageUrl: '/images/warehouse.png'
@@ -116,6 +120,14 @@ export const inventoryOptionData = [
         linkTitle: 'New Adjustment',
         enabled: true,
         imageUrl: '/images/adjustments.png'
+    },
+    {
+        title: "Suppliers",
+        description: "Transfer stock from the Main Warehouse",
+        link: '/dashboard/inventory/suppliers/new',
+        linkTitle: 'New Supplier',
+        enabled: true,
+        imageUrl: '/images/supplier.png'
     },
 ];
 

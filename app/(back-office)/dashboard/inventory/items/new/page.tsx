@@ -177,7 +177,7 @@ const NewItem = () => {
           />
           <ImageInput label="Item Image" imageUrl={imageUrl} setImageUrl={setImageUrl} />
         </div>
-        <SubmitButton loading={loading} title={"Category"} />
+        <SubmitButton loading={loading} title={"Item"} />
       </form>
     </div>
   );
