@@ -10,7 +10,7 @@ import axios from "axios";
 
 const NewSupplier = () => {
   const [loading,setLoading] = useState(false);
-  const [warehouseSelectOptions,setWarehouseSelectOptions] = useState([]);
+  // const [warehouseSelectOptions,setWarehouseSelectOptions] = useState([]);
   const {
     register,
     handleSubmit,
@@ -22,7 +22,8 @@ const NewSupplier = () => {
     (async function() {
       try {
         const response = await axios.get("/api/warehouse/types");
-        setWarehouseSelectOptions(response.data.data);
+        // setWarehouseSelectOptions(response.data.data);
+        console.log(response);
       } catch (error) {
         console.log(error);
       }
