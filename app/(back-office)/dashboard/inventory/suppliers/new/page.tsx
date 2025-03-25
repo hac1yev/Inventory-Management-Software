@@ -7,6 +7,7 @@ import SubmitButton from "@/components/FormInputs/SubmitButton";
 import TextInput from "@/components/FormInputs/TextInput";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { makeApiRequest } from "@/lib/makeApiRequest";
 
 const NewSupplier = () => {
   const [loading,setLoading] = useState(false);
@@ -32,17 +33,8 @@ const NewSupplier = () => {
   
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {    
     setLoading(true);    
-    try {
-      const response = await axios.post('/api/supplier', JSON.stringify(data), {
-        headers: {
-          "Content-type": "application/json"
-        } 
-      });
-      console.log(response);
-      reset();
-    } catch (error) {
-      console.log(error);
-    }
+    const response = await makeApiRequest<FieldValues>(data, reset, 'post', '/api/suppliers');
+    console.log(response);
     setLoading(false);
   };  
 

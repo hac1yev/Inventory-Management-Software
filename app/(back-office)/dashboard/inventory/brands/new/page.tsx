@@ -7,6 +7,7 @@ import TextInput from "@/components/FormInputs/TextInput";
 import { useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { makeApiRequest } from "@/lib/makeApiRequest";
 
 const NewBrand = () => {
   const [loading,setLoading] = useState(false);
@@ -20,18 +21,8 @@ const NewBrand = () => {
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     setLoading(true);
-    try {
-      const response = await axios.post('/api/brands', JSON.stringify(data), {
-        headers: {
-          "Content-type": "application/json"
-        } 
-      });
-      console.log(response);
-      toast.success("New Brand Created Successfully!");
-      reset();
-    } catch (error) {
-      console.log(error);
-    }
+    const response = await makeApiRequest<FieldValues>(data, reset, 'post', '/api/brands');
+    console.log(response);
     setLoading(false);
   };  
 

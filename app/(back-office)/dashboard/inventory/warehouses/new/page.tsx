@@ -8,6 +8,7 @@ import TextInput from "@/components/FormInputs/TextInput";
 import { useEffect, useState } from "react";
 import SelectInput from "@/components/FormInputs/SelectInput";
 import axios from "axios";
+import { makeApiRequest } from "@/lib/makeApiRequest";
 
 const NewWarehouse = () => {
   const [loading,setLoading] = useState(false);
@@ -32,17 +33,8 @@ const NewWarehouse = () => {
   
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {    
     setLoading(true);    
-    try {
-      const response = await axios.post('/api/warehouse', JSON.stringify(data), {
-        headers: {
-          "Content-type": "application/json"
-        } 
-      });
-      console.log(response);
-      reset();
-    } catch (error) {
-      console.log(error);
-    }
+    const response = await makeApiRequest<FieldValues>(data, reset, 'post', '/api/warehouses');
+    console.log(response);
     setLoading(false);
   };  
 

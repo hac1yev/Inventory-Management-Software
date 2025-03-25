@@ -7,6 +7,7 @@ import TextInput from "@/components/FormInputs/TextInput";
 import { useState } from "react";
 import SelectInput from "@/components/FormInputs/SelectInput";
 import { TransferInventoryAdjustmentBranchs } from "@/dummy-data/data";
+import { makeApiRequest } from "@/lib/makeApiRequest";
 
 const TransferInventoryForm = () => {
   const [loading, setLoading] = useState(false);
@@ -20,20 +21,8 @@ const TransferInventoryForm = () => {
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     setLoading(true);
-    try {
-      const response = await fetch("/api/adjustments/transfer", {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-          "Content-type": "application/json",
-        },
-      });
-      const result = await response.json();
-      console.log(result);
-      reset();
-    } catch (error) {
-      console.log(error);
-    }
+    const response = await makeApiRequest<FieldValues>(data, reset, 'post', '/api/addjustments/transfer');
+    console.log(response);
     setLoading(false);
   };
 
